@@ -1,0 +1,365 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'blog/imag/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/animate/animate.css' %}">
+            {% include 'blog/header.html' %}
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
+
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+                         <div class="row header">
+							<div class="cell">
+                               عکس
+							</div>
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+                                   توضیح
+							</div>
+							<div class="cell">
+                                بازدید
+							</div>
+						</div>
+                        <div class="row">
+							<div class="cell" data-title="عکس">
+                                <img src="{{ mobo.image.url }}">
+							</div><div class="cell" data-title="">
+
+							</div>
+							<div class="cell" data-title="توضیح">
+
+                                {{ mobo.desc }}
+							</div>
+
+							<div class="cell" data-title="بازدید">
+                                <small><a href="#" title=""><i class="fa fa-eye"></i> {{ count }}</a></small>
+							</div>
+						</div>
+						<div class="row header">
+							<div class="cell">
+							 گوشی
+							</div>
+							<div class="cell">
+								قیمت
+							</div>
+							<div class="cell">
+									سیستم عامل
+							</div>
+							<div class="cell">
+								زمان انتشار
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title=" گوشی ">
+								{{mobo.mobile_name}}
+							</div>
+							<div class="cell" data-title="قیمت">
+								{{mobo.price}}
+							</div>
+							<div class="cell" data-title="	سیستم عامل">
+								{{mobo.operating_system}}
+							</div>
+							<div class="cell" data-title="زمان انتشار">
+								{{mobo.publication_date}}
+							</div>
+						</div>
+                           <div class="row header">
+							<div class="cell">
+                                بدنه
+							</div>
+							<div class="cell">
+                                ابعاد
+							</div>
+							<div class="cell">
+                                وزن
+							</div>
+							<div class="cell">
+                                سیم کارت
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="بدنه">
+                                {{ material.body_material }}
+							</div>
+							<div class="cell" data-title=" ابعاد">
+                                {{ material.dimensions }}
+
+							</div>
+							<div class="cell" data-title="وزن ">
+                                {{ material.weight }}
+							</div>
+							<div class="cell" data-title="سیم کارت">
+                                {{ material.sim_card }}
+							</div>
+						</div>
+                        <div class="row header">
+							<div class="cell">
+                                پردازنده
+							</div>
+							<div class="cell">
+                                تراشه
+							</div>
+							<div class="cell">
+                                تراشه گرافیکی
+							</div>
+							<div class="cell">
+								بیشتر
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="پردازنده">
+
+							</div>
+							<div class="cell" data-title="تراشه">
+                                {{ processor.chip }}
+							</div>
+							<div class="cell" data-title="تراشه گرافیکی">
+                                {{ processor.graphic_chip }}
+							</div>
+							<div class="cell" data-title="بیشتر">
+                                {{ processor.information }}
+							</div>
+						</div>
+                        <div class="row header">
+							<div class="cell">
+                                دوربین
+							</div>
+							<div class="cell">
+								دوربین اصلی
+							</div>
+							<div class="cell">
+									فیلم برداری
+							</div>
+							<div class="cell">
+                                لرزشگیر
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="دوربین">
+                                {{ camera.number_of_cameras }}
+							</div>
+							<div class="cell" data-title="دوربین اصلی  ">
+                                {{ camera.information }}
+							</div>
+							<div class="cell" data-title="فیلم برداری">
+                                {{ camera.filming }}
+							</div>
+							<div class="cell" data-title="لرزشگیر">
+                                {{ camera.stabilization }}
+							</div>
+						</div>
+                          <div class="row header">
+							<div class="cell">
+                                دوربین سلفی
+							</div>
+							<div class="cell">
+								فیلم برداری
+							</div>
+							<div class="cell">
+									لرزشگیر
+							</div>
+							<div class="cell">
+                                عملکرد کلی
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="  دوربین سلفی   ">
+                                {{ camera.selfie}}
+							</div>
+							<div class="cell" data-title=" فیلم برداری  ">
+                                {{ camera.filming_selfie }}
+							</div>
+							<div class="cell" data-title="لرزشگیر ">
+                                {{ camera.stabilization_selfie }}
+							</div>
+							<div class="cell" data-title="عملکرد کلی">
+                                {{ camera.attributes }}
+							</div>
+
+						</div>
+                        <div class="row header">
+							<div class="cell">
+                                صفحه نمایش
+							</div>
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+                                اطلاعات
+							</div>
+							<div class="cell">
+
+							</div>
+						</div>
+							<div class="row">
+							<div class="cell" data-title="صفحه نمایش">
+                                {{mobo.screen}}
+							</div><div class="cell" data-title=" ">
+
+							</div>
+							<div class="cell" data-title="اطلاعات">
+
+								{{ mobo.information }}
+							</div>
+
+							<div class="cell" data-title="">
+
+							</div>
+						</div>
+						<div class="row header">
+							<div class="cell">
+                                بلندگو
+							</div>
+							<div class="cell">
+								جک ۳.۵
+							</div>
+							<div class="cell">
+									بلندی صدا
+							</div>
+							<div class="cell">
+								استریو
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="بلندگو">
+
+							</div>
+							<div class="cell" data-title="جک ۳.۵">
+                                {{ speaker.jack }}
+							</div>
+							<div class="cell" data-title="بلندی صدا">
+                                {{ speaker.sound_volume }}
+							</div>
+							<div class="cell" data-title="استریو">
+                                {{ speaker.stereo }}
+							</div>
+						</div>
+                        <div class="row header">
+							<div class="cell">
+                                باطری
+							</div>
+							<div class="cell">
+                                سرعت شارژ
+							</div>
+							<div class="cell">
+                                حافظه داخلی
+							</div>
+							<div class="cell">
+                                کارت حافظه
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="باطری">
+                                {{ mobo.battery }}
+							</div>
+							<div class="cell" data-title="سرعت شارژ">
+                                {{ mobo.charging_speed }}
+
+							</div>
+							<div class="cell" data-title=" حافظه داخلی">
+                                {{ memory.internal_memory }}
+							</div>
+							<div class="cell" data-title=" کارت حافظه">
+                                {{ memory.memory_port }}
+							</div>
+                        </div>
+                         <div class="row header">
+							<div class="cell">
+                                باطری
+							</div>
+							<div class="cell">
+                                سرعت شارژ
+							</div>
+							<div class="cell">
+                                حافظه داخلی
+							</div>
+							<div class="cell">
+                                کارت حافظه
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="باطری">
+                                {{ mobo.battery }}
+							</div>
+							<div class="cell" data-title="سرعت شارژ">
+                                {{ mobo.charging_speed }}
+
+							</div>
+							<div class="cell" data-title=" حافظه داخلی">
+                                {{ memory.internal_memory }}
+							</div>
+							<div class="cell" data-title=" کارت حافظه">
+                                {{ memory.memory_port }}
+							</div>
+						</div>
+                        <div class="row header">
+							<div class="cell">
+                                رنگ
+							</div>
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+                                تگ
+							</div>
+							<div class="cell">
+
+							</div>
+						</div>
+                        <div class="row">
+							<div class="cell" data-title="رنگ">
+                                {{ mobo.color_phone }}
+							</div>
+                            <div class="cell" data-title="">
+
+							</div>
+							<div class="cell" data-title="تگ">
+                                {% for category in mobo.cate.all %}
+                                    <small><a href="{% url 'blog:ctegor' category.slug %}" title="">{{ category.title }}</a></small>
+
+                                    {% endfor %}
+
+							</div>
+
+							<div class="cell" data-title="">
+
+							</div>
+						</div>
+
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'blog/imag/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+     {% include 'blog/header.html' %}
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+                        <div class="row header">
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+                                عکس
+							</div>
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+                                  توضیح
+							</div>
+						</div>
+
+                        <div class="row">
+                            <div class="cell" data-title="عکس">
+                                <img src="{{ labtop.image.url }}">
+							</div>
+
+							<div class="cell" data-title="">
+
+							</div>
+                            <div class="cell" data-title="توضیح">
+                                {{labtop.desc}}
+							</div>
+                            <div class="cell" data-title=" ">
+
+							</div>
+
+						</div>
+						<div class="row header">
+							<div class="cell">
+							  لب تاب
+							</div>
+							<div class="cell">
+								قیمت
+							</div>
+							<div class="cell">
+									سیستم عامل
+							</div>
+							<div class="cell">
+								زمان انتشار
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" data-title="لب تاب ">
+								{{labtop.labtop_name}}
+							</div>
+							<div class="cell" data-title="قیمت">
+								{{labtop.price}}
+							</div>
+							<div class="cell" data-title="	سیستم عامل">
+								{{labtop.operating_system}}
+							</div>
+							<div class="cell" data-title="زمان انتشار">
+								{{labtop.publication_date}}
+							</div>
+						</div>
+                                              <div class="row header">
+							<div class="cell">
+                                پردازنده
+							</div>
+							<div class="cell">
+                                تراشه
+							</div>
+							<div class="cell">
+                                تراشه گرافیکی
+							</div>
+							<div class="cell">
+								بیشتر
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="پردازنده">
+
+							</div>
+							<div class="cell" data-title="تراشه">
+									{{processors.chip}}
+							</div>
+							<div class="cell" data-title="تراشه گرافیکی">
+								  {{ processors.graphic_chip }}
+							</div>
+							<div class="cell" data-title="بیشتر">
+									{{ processors.information }}
+							</div>
+						</div>
+
+						<div class="row header">
+							<div class="cell">
+                                بلندگو
+							</div>
+							<div class="cell">
+								جک ۳.۵
+							</div>
+							<div class="cell">
+									بلندی صدا
+							</div>
+							<div class="cell">
+								استریو
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="بلندگو">
+
+							</div>
+							<div class="cell" data-title="جک ۳.۵">
+								{{ speak.jack }}
+							</div>
+							<div class="cell" data-title="بلندی صدا">
+								{{ speak.sound_volume }}
+							</div>
+							<div class="cell" data-title="استریو">
+								{{ speak.stereo }}
+							</div>
+						</div>
+                        <div class="row header">
+							<div class="cell">
+                                اتصالات
+							</div>
+							<div class="cell">
+								Usb
+							</div>
+							<div class="cell">
+									Hdmi
+							</div>
+							<div class="cell">
+                                type c
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="اتصالات">
+
+							</div>
+							<div class="cell" data-title="Usb  ">
+								{{ connections_ids.usb }}
+							</div>
+							<div class="cell" data-title="Hdmi">
+								{{ connections_ids.hdmi }}
+							</div>
+							<div class="cell" data-title="type c">
+								{{ sconnections_idspeak.type_c }}
+							</div>
+						</div>
+                         <div class="row header">
+							<div class="cell">
+                                باطری
+							</div>
+							<div class="cell">
+								سرعت شارژ
+							</div>
+							<div class="cell">
+                                اثر انگشت
+							</div>
+							<div class="cell">
+                                دوربین
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="باطری">
+                                {{labtop.battery}}
+							</div>
+							<div class="cell" data-title="سرعت شارژ">
+								{{ labtop.charging_speed }}
+							</div>
+							<div class="cell" data-title="اثر انگشت">
+                                {{labtop.finger_print}}
+							</div>
+							<div class="cell" data-title="دوربین">
+								{{ labtop.camera }}
+							</div>
+						</div>
+                           <div class="row header">
+							<div class="cell">
+                                صفحه نمایش
+							</div>
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+                                اطلاعات
+							</div>
+							<div class="cell">
+
+							</div>
+						</div>
+							<div class="row">
+							<div class="cell" data-title="صفحه نمایش">
+                                {{labtop.screen}}
+							</div><div class="cell" data-title=" ">
+
+							</div>
+							<div class="cell" data-title="اطلاعات">
+
+								{{ labtop.information }}
+							</div>
+
+							<div class="cell" data-title="">
+
+							</div>
+						</div>
+                          <div class="row header">
+							<div class="cell">
+                                تگ
+							</div>
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+
+							</div>
+							<div class="cell">
+
+							</div>
+						</div>
+                        <div class="row">
+							<div class="cell" data-title="تگ">
+                                {% for category in labtop.cate.all %}
+                                    <small><a href="{% url 'blog:ctegor' category.slug %}" title="">{{ category.title }}</a></small>
+
+                                    {% endfor %}
+							</div>
+                            <div class="cell" data-title="">
+
+							</div>
+							<div class="cell" data-title="">
+
+
+							</div>
+
+							<div class="cell" data-title="">
+
+							</div>
+						</div>
+
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'blog/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'blog/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'blog/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'blog/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'blog/jss/main.js' %}"></script>
+
+</body>
+</html>
